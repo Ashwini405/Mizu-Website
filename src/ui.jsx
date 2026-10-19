@@ -52,7 +52,10 @@ export const I = {
   waves: 'M3 8c3-3 6 3 9 0s6 3 9 0M3 13c3-3 6 3 9 0s6 3 9 0M3 18c3-3 6 3 9 0s6 3 9 0',
   eye: 'M2 12c3-5 7-7 10-7s7 2 10 7c-3 5-7 7-10 7s-7-2-10-7zM12 15a3 3 0 100-6 3 3 0 000 6z',
   pie: 'M12 3a9 9 0 109 9h-9zM15 3.6A9 9 0 0120.4 9H15z',
-  house: 'M3 11l9-8 9 8M5 10v10h14V10M9 20v-6h6v6'
+  house: 'M3 11l9-8 9 8M5 10v10h14V10M9 20v-6h6v6',
+  gate: 'M3 5c6 1.5 12 1.5 18 0M5 9h14M7 6v15M17 6v15',
+  stones: 'M7 20h10a3 2 0 000-4H7a3 2 0 000 4zM8.5 16h7a2.5 1.8 0 000-3.6h-7a2.5 1.8 0 000 3.6zM10 12.4h4a2 1.6 0 000-3.2h-4a2 1.6 0 000 3.2z',
+  tree: 'M12 21v-7M12 16l-3-2.5M12 14.5l3-2.5M12 3a6 6 0 00-5.5 8.4A4 4 0 0010 18h4a4 4 0 003.5-6.6A6 6 0 0012 3z'
 }
 export const Ic = ({ d, size = 20, sw = 1.7 }) => <svg viewBox="0 0 24 24" width={size} height={size} fill="none" stroke="currentColor" strokeWidth={sw} strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d={d} /></svg>
 export const Foot = ({ dark }) => (
@@ -79,7 +82,7 @@ export function Sheet({ variant, bg, pos = 'center', eyebrow = 'pill', left, chi
       <div className="sl-shade" aria-hidden="true" />
       {left && (
         <div className="sl-left">
-          {eyebrow === 'none' ? null : eyebrow === 'pill' ? <span className="pill">MIZU </span> : <span className="eyebrow2">MIZU </span>}
+          {eyebrow === 'none' ? null : eyebrow === 'pill' ? <span className="pill">MIZU BY ISTA</span> : <span className="eyebrow2">MIZU BY ISTA</span>}
           {left}
         </div>
       )}

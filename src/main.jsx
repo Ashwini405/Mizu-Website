@@ -8,4 +8,5 @@ import './chrome.css'
 import './book.css'
 import './slides.css'
 import './mobile.css'
+import './details.css'
 createRoot(document.getElementById('root')).render(<HashRouter><App /></HashRouter>)

@@ -1,4 +1,4 @@
-import bg from '../assets/home-bg.jpg'
+import bg from '../assets/facade.jpg'
 import s1 from '../assets/s1.jpg'; import s2 from '../assets/s2.jpg'; import s3 from '../assets/s3.jpg'; import s4 from '../assets/s4.jpg'
 import { SLink, Ic, I } from '../ui.jsx'
 const S = [

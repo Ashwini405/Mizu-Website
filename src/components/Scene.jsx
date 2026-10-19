@@ -1,4 +1,4 @@
-import homeBg from '../assets/home-bg.jpg'
+import homeBg from '../assets/facade.jpg'
 import sceneImg from '../assets/loc/scene.jpg'
 
 const CITY = [[0,22,38],[24,14,60],[40,18,48],[60,12,78],[74,20,56],[96,14,92],[112,22,64],[136,12,104],[150,18,70],[170,26,52],[198,14,86],[214,20,60],[236,16,42],[254,24,66],[280,14,30]]

@@ -1,12 +1,12 @@
-import homeBg from '../assets/home-bg.jpg'
-import { fmt, money, short, calc } from '../data.js'
+import homeBg from '../assets/facade.jpg'
+import { fmt, money, short, calc, sqft } from '../data.js'
 import { SLink, Ic, I, useLenis, useTween } from '../ui.jsx'
 import BookShowcase from '../components/BookShowcase.jsx'
-import Building from './Building.jsx'
-import Returns from './Returns.jsx'
-import Protection from './Protection.jsx'
+import Building, { BuildingDesign, BuildingSection, BuildingPlan } from './Building.jsx'
+import Returns, { EarningsTable } from './Returns.jsx'
+import Protection, { RefundCalc } from './Protection.jsx'
 import Process from './Process.jsx'
-import Enquire from './Enquire.jsx'
+import Enquire, { Contacts } from './Enquire.jsx'
 
 export default function Home({ lakh, setLakh, ticket, setTicket, active }) {
   const c0 = calc(lakh)
@@ -15,7 +15,7 @@ export default function Home({ lakh, setLakh, ticket, setTicket, active }) {
   return (
     <main className="view pgin" key={active}>
       {active === '/' && <section id="home" className="home2" aria-label="Investment potential" style={{ '--home-bg': `url(${homeBg})` }}>
-        <div className="h2-bg" aria-hidden="true" /><div className="h2-shade" aria-hidden="true" />
+        <div className="h2-bg" aria-hidden="true" /><div className="h2-bld" aria-hidden="true" /><div className="h2-shade" aria-hidden="true" />
         <div className="h2-left">
           <p className="h2-eyebrow">INVESTMENT POTENTIAL</p>
           <h1 className="h2-q">Earn from a <span>Prime Location</span></h1>
@@ -30,26 +30,52 @@ export default function Home({ lakh, setLakh, ticket, setTicket, active }) {
             </div>
           </div>
           <div className="h2-bottom">
-            <p className="h2-ref">Reference price ₹13,000 per sq.ft. Assured rent ₹65 per sq.ft a month, paid from day one through construction. Excludes GST, registration and other charges.</p>
-            <SLink className="h2-cta" to="/enquire">Reserve this ticket <Ic d={I.arrow} size={20} /></SLink>
+            
+            <div className="h2-acts"><SLink className="h2-cta" to="/enquire">Reserve this ticket <Ic d={I.arrow} size={20} /></SLink><SLink className="h2-link" to="/returns">How returns work</SLink></div>
           </div>
         </div>
         <div className="h2-right">
           <div className="h2-rlabel">MONTHLY ASSURED RENT</div>
-          <div className="h2-glass h2-rent"><strong>{fmt(c.m)}</strong><span>from day one</span></div>
-          <div className="h2-facts">
-            <div className="h2-glass"><Ic d={I.coins} size={30} sw={1.5} /><strong>{short(c.y)}</strong><small>Annual Income</small></div>
-            <div className="h2-glass"><Ic d={I.chart} size={30} sw={1.5} /><strong>6%</strong><small>Assured Yield</small></div>
-            <div className="h2-glass"><Ic d={I.house} size={30} sw={1.5} /><strong>{(lakh === 30 ? '~' : '') + Math.round(c.sq).toLocaleString('en-IN')}</strong><small>Sq.Ft You Own</small></div>
+          <div className="h2-glass h2-panel">
+            <div className="h2-rent"><strong>{fmt(c.m)}</strong><span>a month, from day one</span></div>
+            <dl className="h2-facts">
+              <div><dt>Annual income</dt><dd>{short(c.y)}</dd></div>
+              <div><dt>Assured yield</dt><dd>6%</dd></div>
+              <div><dt>Sq.ft you own</dt><dd>{(sqft(lakh)[0] === '~' ? '~' : '') + Math.round(c.sq).toLocaleString('en-IN')}</dd></div>
+            </dl>
+          </div>
+          <div className="h2-glass h2-offer">
+            <p className="h2-olabel">PRE-LAUNCH OFFER</p>
+            <dl>
+              <div><dt>Price</dt><dd>₹13,000 <small>/ sq.ft</small></dd></div>
+              <div><dt>Minimum</dt><dd>₹30 L</dd></div>
+              <div><dt>Available</dt><dd>One floor <small>~25,000 sq.ft</small></dd></div>
+              <div><dt>Delay protection</dt><dd>12% p.a. <small>refund</small></dd></div>
+            </dl>
+            <p className="h2-ofine">Rent paid from day one through construction. Excludes GST, registration and other charges.</p>
           </div>
         </div>
       </section>}
       {active === '/location' && <BookShowcase />}
-      {active === '/building' && <section id="building" className="hsec"><Building /></section>}
-      {active === '/returns' && <section id="returns" className="hsec"><Returns lakh={lakh} setLakh={setLakh} ticket={ticket} setTicket={setTicket} /></section>}
-      {active === '/protection' && <section id="protection" className="hsec"><Protection /></section>}
+      {active === '/building' && <>
+        <section id="building" className="hsec"><Building /></section>
+        <section className="xsec" aria-label="The design"><BuildingDesign /></section>
+        <section className="xsec" aria-label="Section and specifications"><BuildingSection /></section>
+        <section className="xsec" aria-label="Site plan and typical floor"><BuildingPlan /></section>
+      </>}
+      {active === '/returns' && <>
+        <section id="returns" className="hsec"><Returns lakh={lakh} ticket={ticket} /></section>
+        <section className="xsec" aria-label="What your investment earns"><EarningsTable lakh={lakh} setLakh={setLakh} ticket={ticket} setTicket={setTicket} /></section>
+      </>}
+      {active === '/protection' && <>
+        <section id="protection" className="hsec"><Protection /></section>
+        <section className="xsec" aria-label="Refund example"><RefundCalc lakh={lakh} ticket={ticket} /></section>
+      </>}
       {active === '/process' && <section id="process" className="hsec"><Process /></section>}
-      {active === '/enquire' && <section id="enquire" className="hsec"><Enquire lakh={lakh} ticket={ticket} /></section>}
+      {active === '/enquire' && <>
+        <section id="enquire" className="hsec"><Enquire lakh={lakh} ticket={ticket} /></section>
+        <section className="xsec" aria-label="Contacts"><Contacts /></section>
+      </>}
     </main>
   )
 }

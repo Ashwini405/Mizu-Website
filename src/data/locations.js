@@ -12,6 +12,14 @@ import lobby from '../assets/loc/lobby.jpg'
 import t1 from '../assets/loc/t1.jpg'; import t2 from '../assets/loc/t2.jpg'; import t3 from '../assets/loc/t3.jpg'
 import t4 from '../assets/loc/t4.jpg'; import t5 from '../assets/loc/t5.jpg'
 
+/* approx. off-peak drive times from the site */
+export const DRIVE_TIMES = [
+  ['ORR junction', '~5 min'],
+  ['Gachibowli', '~10 min'],
+  ['Kokapet / Neopolis', '~10 min'],
+  ['HITEC City', '~20 min'],
+  ['RGIA Airport', '~35 min'],
+]
 export const SITE_DISTANCES = [
   ['Knowledge Capital', 'Next door'],
   ['Sohini Tech Park', '0.7 km'],
@@ -30,20 +38,23 @@ export const locations = [
   { id: 'google', name: 'Google', title: 'Google', subtitle: 'Neighbouring campus', tagline: 'A neighbour with global reach',
     description: 'Google’s campus is among the neighbours around MIZU on Narsingi–Nanakramguda Road, keeping a steady stream of professionals and businesses in the area.',
     image: sunset, gallery: [sunset, t3, t5, t2, amazon], features: FEATS, distances: [['MIZU', 'Nearby'], ...SITE_DISTANCES], map: { label: 'Google', pin: { x: 70, y: 52 } } },
-  { id: 'microsoft', name: 'Microsoft', title: 'Microsoft', subtitle: 'Technology hub nearby', tagline: 'Technology talent, close by',
-    description: GENERIC, image: facade, gallery: [facade, t4, t2, t5, t3], features: FEATS, distances: [['MIZU', 'Nearby'], ...SITE_DISTANCES], map: { label: 'Microsoft', pin: { x: 150, y: 40 } } },
-  { id: 'wipro', name: 'Wipro', title: 'Wipro', subtitle: 'IT campus nearby', tagline: 'Established IT demand',
-    description: GENERIC, image: office, gallery: [office, t5, t4, t3, t2], features: FEATS, distances: [['MIZU', 'Nearby'], ...SITE_DISTANCES], map: { label: 'wipro', pin: { x: 60, y: 120 } } },
-  { id: 'infosys', name: 'Infosys', title: 'Infosys', subtitle: 'IT campus nearby', tagline: 'Steady office demand',
-    description: GENERIC, image: retail, gallery: [retail, t2, t5, t4, t3], features: FEATS, distances: [['MIZU', 'Nearby'], ...SITE_DISTANCES], map: { label: 'Infosys', pin: { x: 170, y: 105 } } },
+  { id: 'nvidia', name: 'NVIDIA', title: 'NVIDIA', subtitle: 'Neighbouring tech campus', tagline: 'Global tech as a neighbour',
+    description: 'NVIDIA is one of the global tech campuses around MIZU, alongside Amazon and Google, adding to everyday demand for office space close to the site.',
+    image: facade, gallery: [facade, t4, t2, t5, t3], features: FEATS, distances: [['MIZU', 'Nearby'], ...SITE_DISTANCES], map: { label: 'NVIDIA', pin: { x: 150, y: 40 } } },
+  { id: 'waverock', name: 'WaveRock SEZ', title: 'WaveRock SEZ', subtitle: 'Office cluster nearby', tagline: 'An established office cluster',
+    description: 'WaveRock SEZ is part of the office cluster around MIZU, with My Home RMZ and Knowledge Capital, on Narsingi–Nanakramguda Road.',
+    image: office, gallery: [office, t5, t4, t3, t2], features: FEATS, distances: [['MIZU', 'Nearby'], ...SITE_DISTANCES], map: { label: 'WaveRock', pin: { x: 60, y: 120 } } },
+  { id: 'myhome-rmz', name: 'My Home RMZ', title: 'My Home RMZ', subtitle: 'Jayabheri · My Home RMZ', tagline: 'Offices and homes around the site',
+    description: 'Neighbours include My Home RMZ and the residential communities at Vasavi, One West, Jayabheri and Vajra’s Jasmine County, with Shri Ram Universal School, Apollo and Star Hospitals close by.',
+    image: retail, gallery: [retail, t2, t5, t4, t3], features: FEATS, distances: [['MIZU', 'Nearby'], ...SITE_DISTANCES], map: { label: 'My Home RMZ', pin: { x: 170, y: 105 } } },
   { id: 'financial-district', name: 'Financial District', title: 'Financial District', subtitle: 'Hyderabad’s business address', tagline: 'In the heart of the district',
-    description: 'MIZU is located in Hyderabad’s Financial District at Nanakramguda, surrounded by corporate campuses, hospitals and the Outer Ring Road.',
-    image: night, gallery: [night, t3, t2, t5, t4], features: FEATS, distances: [['MIZU', 'In the district'], ...SITE_DISTANCES], map: { label: 'Financial District', pin: { x: 105, y: 95 } } },
+    description: 'MIZU is located in Hyderabad’s Financial District at Nanakramguda, set among Hyderabad’s largest office campuses, with direct ORR access.',
+    image: night, gallery: [night, t3, t2, t5, t4], features: FEATS, distLabel: 'Approx. drive times', distances: DRIVE_TIMES, map: { label: 'Financial District', pin: { x: 105, y: 95 } } },
   { id: 'knowledge-city', name: 'Knowledge City', title: 'Knowledge City', subtitle: 'Knowledge Capital, next door', tagline: 'Next door, facing the lake',
     description: 'MIZU sits beside Knowledge Capital, with a landscaped buffer on the east that opens onto the water.',
     image: lobby, gallery: [lobby, t4, t3, t2, t5], features: FEATS, distances: [['MIZU', 'Next door'], ...SITE_DISTANCES], map: { label: 'Knowledge Capital', pin: { x: 128, y: 82 } } },
   { id: 'orr-exit', name: 'ORR Exit', title: 'ORR Exit', subtitle: 'Exit 19, Nanakramguda', tagline: 'The Outer Ring Road, minutes away',
-    description: 'Outer Ring Road Exit 19 at Nanakramguda is 1.3 km from the site, giving quick access to the rest of Hyderabad.',
+    description: 'Outer Ring Road Exit 19 at Nanakramguda is 1.3 km from the site: about 5 minutes to the ORR, 10 to Gachibowli and Kokapet, and 35 to RGIA Airport.',
     image: office, gallery: [office, t5, t2, t3, t4], features: FEATS, distances: [['MIZU', '1.3 km'], ...SITE_DISTANCES], map: { label: 'ORR Exit 19', pin: { x: 40, y: 85 } } },
 ]
 export const TOTAL = locations.length

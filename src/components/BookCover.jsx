@@ -7,7 +7,7 @@ export default function BookCover({ onOpen, interactive = false }) {
       <i className="cv-spine" />
       <div className="cv-frame">
         <span className="cv-kana" aria-hidden="true">水</span>
-        <p className="cv-brand">MIZU <small></small></p>
+        <p className="cv-brand">MIZU <small>BY ISTA</small></p>
         <i className="cv-rule" />
         <h2>Investment Potential</h2>
         <p className="cv-sub">Explore Nearby Landmarks</p>

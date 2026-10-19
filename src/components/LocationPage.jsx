@@ -14,9 +14,6 @@ export function Logo({ id, name }) {
     <span className="lg lg-amz" aria-label="amazon"><b>amazon</b>
       <svg viewBox="0 0 120 20" aria-hidden="true"><path d="M8 4c24 14 70 14 102-2" fill="none" stroke="#F90" strokeWidth="4" strokeLinecap="round" /><path d="M104 0l10 2-4 9" fill="none" stroke="#F90" strokeWidth="3.5" strokeLinecap="round" strokeLinejoin="round" /></svg></span>)
   if (id === 'google') return <span className="lg lg-g" aria-label="Google"><i style={{ color: '#4285F4' }}>G</i><i style={{ color: '#EA4335' }}>o</i><i style={{ color: '#FBBC05' }}>o</i><i style={{ color: '#4285F4' }}>g</i><i style={{ color: '#34A853' }}>l</i><i style={{ color: '#EA4335' }}>e</i></span>
-  if (id === 'microsoft') return <span className="lg lg-ms" aria-label="Microsoft"><span className="sq"><i style={{ background: '#F25022' }} /><i style={{ background: '#7FBA00' }} /><i style={{ background: '#00A4EF' }} /><i style={{ background: '#FFB900' }} /></span>Microsoft</span>
-  if (id === 'wipro') return <span className="lg lg-w" aria-label="Wipro">wipro</span>
-  if (id === 'infosys') return <span className="lg lg-i" aria-label="Infosys">Infosys</span>
   return <span className="lg lg-t" aria-label={name}>{name}</span>
 }
 
@@ -74,7 +71,7 @@ export function RightPage({ loc }) {
       </ul>
       <div className="lp-low">
         <div className="lp-dist">
-          <p className="lp-lab">Key distances</p>
+          <p className="lp-lab">{loc.distLabel || 'Key distances'}</p>
           <ul>{loc.distances.map(([a, b]) => <li key={a}><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M12 22s7-6.2 7-12a7 7 0 10-14 0c0 5.8 7 12 7 12z" fill="#B28045" /><circle cx="12" cy="10" r="2.6" fill="#fff" /></svg><span>{a}</span><b>{b}</b></li>)}</ul>
         </div>
         <MiniMap map={loc.map} />
