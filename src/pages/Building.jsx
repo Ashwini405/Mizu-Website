@@ -68,7 +68,7 @@ export function BuildingDesign() {
           <p className="xs-fine">Concept design. Final elevation is under development and may differ.</p>
         </div>
         <figure className="xd-img">
-          <img src={facade} alt="MIZU by ISTA, front elevation at dusk" loading="lazy" />
+          <img src={facade} alt="MIZU, front elevation at dusk" loading="lazy" />
           <img className="xd-inset" src={detail} alt="Offices behind timber fins" loading="lazy" />
           <figcaption>Front elevation (north) · concept image</figcaption>
         </figure>

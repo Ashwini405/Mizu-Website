@@ -1,0 +1,28 @@
+/* ===================================================================
+   ONE TYPE SYSTEM for the whole site (loaded last, so it wins).
+   Headings + key figures : Newsreader 500   (var(--serif))
+   Body, buttons, inputs  : Figtree 400/500  (var(--sans))
+   Small caps labels      : Figtree 600, uppercase, tracked
+   Brand logos on the location pages keep their own lettering.
+   =================================================================== */
+body,button,input,select,textarea{font-family:var(--sans)}
+
+/* every heading */
+.view h1,.view h2,.view h3{font-family:var(--serif)!important;font-weight:500!important;letter-spacing:-.015em}
+.view h1 em,.view h2 em,.view h3 em{font-weight:500}
+
+/* every headline figure: amounts, rents, areas, stat values */
+.h2-amount,.h2-rent strong,.h2-facts dd,.h2-offer dd,
+.b3-card strong,.bd2-node strong,.bd2-card strong,
+.rt2-card strong,.pt3 .rt2-card strong,.rt2-cal b,
+.xe-cards b,.xe-tbl tbody th,.specs dd,.xp-units td,.xp-hl b,.xr-ledger dd,
+.efacts b,.lp-dist b,.pr4-node,.pr3-node{font-family:var(--serif)!important;font-weight:500!important;letter-spacing:-.01em}
+.efacts b{font-size:clamp(15px,1.15vw,19px)}
+
+/* small uppercase labels share one style */
+.h2-eyebrow,.h2-rlabel,.h2-invest label,.h2-olabel,.rt2-eye,.pr4-eye,.pr4-num,.xs-kick,.lp-lab,.lp-count,
+.h2-facts dt,.xe-cards small,.xe-tbl thead th,.xp-units thead th,.xr-years span,.pill,.eyebrow2{font-family:var(--sans)!important;font-weight:600!important;text-transform:uppercase}
+
+/* buttons and links: one weight */
+.h2-cta,.h2-chip,.h2-link,.pr4-go,.xc-link,.topr,.cta,.cb,.cv-btn,.lp-gal,.rt2-chips button,.xr-years button{font-family:var(--sans)!important;font-weight:500!important}
+.topr{font-weight:600!important}

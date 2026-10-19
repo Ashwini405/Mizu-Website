@@ -13,18 +13,17 @@ function Splash() {
   }, [])
   if (ph === 'gone') return null
   return (
-    <div className={'splash' + (ph === 'out' ? ' out' : '')} role="status" aria-label="Loading MIZU by ISTA">
+    <div className={'splash' + (ph === 'out' ? ' out' : '')} role="status" aria-label="Loading MIZU">
       <div className="sp-in">
         <span className="sp-kana">水</span>
         <b className="sp-name">MIZU</b>
-        <small className="sp-by">BY ISTA · CITYHUB PROPERTIES</small>
       </div>
     </div>
   )
 }
 
 export default function App() {
-  const [lakh, setLakh] = useState(130)
+  const [lakh, setLakh] = useState(100)
   const [ticket, setTicket] = useState(null)
   const { pathname } = useLocation()
   const go = useNavigate()
@@ -39,7 +38,7 @@ export default function App() {
       <Splash />
       <div className="bg" aria-hidden="true"><i /><i /><i /></div>
       <header className={'topbar' + ' on-dark'}>
-        <SLink className="logo" to="/" aria-label="MIZU by ISTA, home"><span>水</span><b>MIZU<small>BY ISTA</small></b></SLink>
+        <SLink className="logo" to="/" aria-label="MIZU, home"><span>水</span><b>MIZU</b></SLink>
         <nav className="pillbar" aria-label="Quick links">
           <SLink to="/enquire" title="Enquire" aria-label="Enquire"><Ic d={I.mail} /></SLink>
           <a href={MAP_URL} target="_blank" rel="noopener noreferrer" title="Open the site on Google Maps" aria-label="Open the site on Google Maps"><Ic d={I.site} /></a>

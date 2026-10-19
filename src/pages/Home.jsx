@@ -26,7 +26,7 @@ export default function Home({ lakh, setLakh, ticket, setTicket, active }) {
             <input id="amt" type="range" min="30" max="500" step="5" value={lakh} onChange={e => setLakh(+e.target.value)} style={{ '--p': ((lakh - 30) / 470) * 100 + '%' }} />
             <div className="h2-ticks"><span>₹30 L</span><span>₹5 Cr</span></div>
             <div className="h2-chips" role="group" aria-label="Quick picks">
-              {[30, 65, 130, 260].map(v => <button key={v} type="button" className="h2-chip" aria-pressed={v === lakh} onClick={() => setLakh(v)}>{v === 130 ? '₹1.3 Cr' : v === 260 ? '₹2.6 Cr' : '₹' + v + ' L'}</button>)}
+              {[30, 50, 75, 100].map(v => <button key={v} type="button" className="h2-chip" aria-pressed={v === lakh} onClick={() => setLakh(v)}>{money(v)}</button>)}
             </div>
           </div>
           <div className="h2-bottom">

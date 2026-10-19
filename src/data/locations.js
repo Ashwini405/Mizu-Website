@@ -9,6 +9,7 @@ import office from '../assets/loc/office.jpg'
 import retail from '../assets/loc/retail.jpg'
 import night from '../assets/loc/hero.jpg'
 import lobby from '../assets/loc/lobby.jpg'
+import siteplan from '../assets/siteplan.jpg'
 import t1 from '../assets/loc/t1.jpg'; import t2 from '../assets/loc/t2.jpg'; import t3 from '../assets/loc/t3.jpg'
 import t4 from '../assets/loc/t4.jpg'; import t5 from '../assets/loc/t5.jpg'
 
@@ -32,6 +33,11 @@ const FEATS = feat('Major Hiring Hub', 'Global Workforce', 'Premium Infrastructu
 const GENERIC = 'One of the large technology employers around Hyderabad’s Financial District, adding to everyday demand for office space close to MIZU.'
 
 export const locations = [
+  { id: 'mizu', name: 'MIZU', title: 'MIZU', subtitle: 'Site plan · Nanakramguda', tagline: 'Gates on the 80 ft road, the lake to the east',
+    description: 'Entry and exit gates on the 80 ft north road, 23 ft driveways all round, and a landscaped buffer opening onto the water body to the east. Indicative site plan, north at top.',
+    image: siteplan, gallery: [siteplan, facade, night, lobby, office],
+    features: [['tower', 'Ground + 11 tower'], ['brief', '24,634 sq.ft floors'], ['people', '6 + 2 lifts'], ['chart', '80 ft road frontage']],
+    distances: SITE_DISTANCES, map: { label: 'Site', pin: { x: 96, y: 128 } } },
   { id: 'amazon', name: 'Amazon', title: 'Amazon', subtitle: 'Global Campus in Nanakramguda', tagline: 'A global tech leader, next door',
     description: 'Amazon’s prestigious campus is just minutes from MIZU, making it a high-demand location for professionals, businesses and investors. This proximity drives strong rental demand and long-term value.',
     image: amazon, gallery: [amazon, t2, t3, t4, t5], features: FEATS, distances: [['MIZU', '0.7 km'], ...SITE_DISTANCES], map: { label: 'amazon', pin: { x: 112, y: 70 } } },

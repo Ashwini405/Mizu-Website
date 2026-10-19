@@ -3,7 +3,7 @@ import { ticketFor, EMAIL, MAP_URL } from '../data.js'
 import { XS } from './Building.jsx'
 import enq from '../assets/facade.jpg'
 import { Sheet, Ic, I } from '../ui.jsx'
-const OPTS = ['₹30 L', '₹65 L', '₹1.3 Cr', '₹2.6 Cr', 'Above ₹2.6 Cr', 'Full floor']
+const OPTS = ['₹30 L', '₹50 L', '₹75 L', '₹1 Cr', 'Above ₹1 Cr', 'Full floor']
 export default function Enquire({ lakh, ticket }) {
   const [tk, setTk] = useState(ticket || ticketFor(lakh))
   useEffect(() => { setTk(ticket || ticketFor(lakh)) }, [lakh, ticket])

@@ -22,7 +22,7 @@ function live(lakh, ticket) {
   const c = calc(lakh)
   return { inv: money(lakh), sq: sqft(lakh) + ' sq.ft', rm: short(c.m), ry: short(c.y) }
 }
-export default function Returns({ lakh = 130, ticket = null }) {
+export default function Returns({ lakh = 100, ticket = null }) {
   const L = live(lakh, ticket)
   const NODES = BASE.map(n => n.k ? { ...n, v: L[n.k] } : n)
   const wrap = useRef(), [k, setK] = useState(1)
@@ -73,7 +73,7 @@ export default function Returns({ lakh = 130, ticket = null }) {
 }
 
 /* the brochure's "What your investment earns" table; rows pick the ticket */
-const ROWS = [30, 65, 130, 260]
+const ROWS = [30, 50, 75, 100]
 export function EarningsTable({ lakh, setLakh, ticket, setTicket }) {
   const full = ticket === 'Full floor', custom = !full && !ROWS.includes(lakh)
   const row = (key, on, inv, sq, m, y, pick, tag) => (

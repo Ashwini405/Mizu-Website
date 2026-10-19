@@ -13,7 +13,7 @@ export const sqft = l => { const sq = l * 100000 / PRICE; return (Math.abs(sq - 
 export const FULL = { inv: FLOOR * PRICE, sq: FLOOR, m: FLOOR * RATE, y: FLOOR * RATE * 12 }
 /* principal in rupees for the current choice */
 export const principal = (l, ticket) => ticket === 'Full floor' ? FULL.inv : l * 100000
-export const ticketFor = l => { const t = money(l); return ['₹30 L', '₹65 L', '₹1.3 Cr', '₹2.6 Cr'].includes(t) ? t : (l > 260 ? 'Above ₹2.6 Cr' : '₹1.3 Cr') }
+export const ticketFor = l => { const t = money(l); return ['₹30 L', '₹50 L', '₹75 L', '₹1 Cr'].includes(t) ? t : (l > 100 ? 'Above ₹1 Cr' : l >= 75 ? '₹75 L' : l >= 50 ? '₹50 L' : '₹30 L') }
 export const NAV = [['/', 'Home', 'home'], ['/location', 'Location', 'pin'], ['/building', 'Building', 'bld'], ['/returns', 'Returns', 'rupee'], ['/protection', 'Protection', 'shield'], ['/process', 'Process', 'steps'], ['/enquire', 'Enquire', 'mail']]
 
 export const SECTION_ID = { '/': 'home', '/location': 'location', '/building': 'building', '/returns': 'returns', '/protection': 'protection', '/process': 'process', '/enquire': 'enquire' }

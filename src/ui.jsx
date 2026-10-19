@@ -82,7 +82,7 @@ export function Sheet({ variant, bg, pos = 'center', eyebrow = 'pill', left, chi
       <div className="sl-shade" aria-hidden="true" />
       {left && (
         <div className="sl-left">
-          {eyebrow === 'none' ? null : eyebrow === 'pill' ? <span className="pill">MIZU BY ISTA</span> : <span className="eyebrow2">MIZU BY ISTA</span>}
+          {eyebrow === 'none' ? null : eyebrow === 'pill' ? <span className="pill">MIZU</span> : <span className="eyebrow2">MIZU</span>}
           {left}
         </div>
       )}

@@ -5,7 +5,7 @@ export function CTALeft() {
   return (
     <div className="lp lp-left cta-l">
       <div className="lp-img"><img src={lakeImg} alt="" draggable="false" /></div>
-      <span className="lp-count">MIZU BY ISTA</span>
+      <span className="lp-count">MIZU</span>
       <h2 className="lp-title">Investment Potential</h2>
       <p className="lp-sub">Beside Knowledge Capital, facing the lake</p>
     </div>

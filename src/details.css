@@ -264,3 +264,43 @@
  .h2-offer dl>div{padding:5px 0}
  .h2-ofine{display:none}
 }
+
+/* site-plan page of the book: shade the top so the title reads over the plan */
+.lp-veil{position:absolute;inset:0;z-index:1;pointer-events:none;background:linear-gradient(180deg,rgba(20,24,20,.9) 0,rgba(20,24,20,.72) 30%,transparent 52%,transparent 78%,rgba(20,24,20,.45))}
+
+/* =================== PROCESS: quiet timeline =================== */
+.pr4{position:relative;height:100%;overflow:hidden;isolation:isolate;color:#fff;display:flex;flex-direction:column;justify-content:center;padding:max(104px,12vh) clamp(24px,3vw,60px) 112px max(130px,9vw);background:#1d2023}
+.pr4-bg{position:absolute;inset:-60px;z-index:-2;background:var(--bg) 50% 40%/cover no-repeat;filter:blur(26px) brightness(.6) saturate(1.05)}
+.pr4-shade{position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(18,20,22,.55),rgba(18,20,22,.25) 45%,rgba(18,20,22,.6))}
+.pr4-head{text-align:center;animation:rise .8s var(--ease) both}
+.pr4-eye{margin:0;font:600 11.5px var(--sans);letter-spacing:.32em;text-transform:uppercase;color:rgba(255,255,255,.75)}
+.pr4-head h1{margin:clamp(8px,1.4vh,14px) 0 0;font:500 clamp(32px,min(3.2vw,6.4vh),56px)/1.08 var(--serif);letter-spacing:-.015em}
+.pr4-head h1 em{font-style:italic;color:#F0D9A6}
+.pr4-lead{margin:clamp(8px,1.4vh,12px) 0 0;font:400 clamp(13.5px,1vw,16px) var(--sans);color:rgba(255,255,255,.75)}
+.pr4-track{position:relative;list-style:none;margin:clamp(30px,5.4vh,56px) auto 0;padding:0;width:min(100%,1380px);display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:clamp(14px,1.6vw,28px)}
+.pr4-track::before{content:"";position:absolute;left:12.5%;right:12.5%;top:17px;height:1px;background:linear-gradient(90deg,rgba(240,217,166,.15),rgba(240,217,166,.55),rgba(240,217,166,.15))}
+.pr4-step{display:flex;flex-direction:column;align-items:center;min-width:0;animation:rise .8s var(--ease) backwards;animation-delay:calc(.15s + var(--i)*.1s)}
+.pr4-node{position:relative;z-index:1;width:35px;height:35px;border-radius:50%;display:flex;align-items:center;justify-content:center;font:500 13px var(--serif);color:#F0D9A6;background:#23262a;border:1px solid rgba(240,217,166,.6);box-shadow:0 0 0 6px rgba(29,32,35,.6)}
+.pr4-card{margin-top:clamp(16px,2.6vh,24px);width:100%;flex:1;display:flex;flex-direction:column;overflow:hidden;border-radius:20px;border:1px solid rgba(255,255,255,.14);background:linear-gradient(180deg,rgba(26,29,32,.62),rgba(26,29,32,.48));backdrop-filter:blur(20px) saturate(130%);-webkit-backdrop-filter:blur(20px) saturate(130%);box-shadow:0 24px 50px -26px rgba(0,0,0,.6);transition:transform .45s var(--ease),border-color .45s}
+.pr4-card:hover{transform:translateY(-4px);border-color:rgba(240,217,166,.4)}
+.pr4-photo{height:clamp(110px,19vh,190px);overflow:hidden}
+.pr4-photo img{width:100%;height:100%;object-fit:cover;transition:transform 1.2s var(--ease)}
+.pr4-card:hover .pr4-photo img{transform:scale(1.05)}
+.pr4-body{flex:1;display:flex;flex-direction:column;padding:clamp(16px,2.4vh,24px) clamp(18px,1.5vw,24px) clamp(16px,2.2vh,22px)}
+.pr4-num{margin:0;font:600 10.5px var(--sans);letter-spacing:.24em;text-transform:uppercase;color:rgba(240,217,166,.85)}
+.pr4-body h2{margin:8px 0 0;font:500 clamp(19px,1.45vw,24px)/1.2 var(--serif)}
+.pr4-body>p:not(.pr4-num){margin:8px 0 0;font:400 clamp(13px,.92vw,14.5px)/1.6 var(--sans);color:rgba(255,255,255,.72)}
+.pr4-go{margin-top:auto;padding-top:clamp(12px,2vh,18px);align-self:flex-start;display:inline-flex;align-items:center;gap:8px;color:#fff;font:500 13.5px var(--sans);text-decoration:none;border-bottom:1px solid rgba(255,255,255,.3);padding-bottom:3px;transition:color .3s,border-color .3s}
+.pr4-go:hover{color:#F0D9A6;border-color:#F0D9A6}
+.pr4-go svg{transition:transform .3s var(--ease)}.pr4-go:hover svg{transform:translateX(3px)}
+@media (max-width:1180px) and (min-width:860px){.pr4{padding-left:96px}.pr4-track{grid-template-columns:repeat(2,minmax(0,1fr))}.pr4-track::before{display:none}.pr4-photo{height:110px}}
+@media (max-width:859px){
+ .view>.hsec:has(.pr4){padding:10px 10px 0}
+ .pr4{height:auto;border-radius:24px;padding:30px 16px 22px}
+ .pr4-head h1{font-size:clamp(30px,9vw,40px)}
+ .pr4-track{grid-template-columns:1fr;gap:18px}
+ .pr4-track::before{left:17px;right:auto;top:0;bottom:0;width:1px;height:auto;background:rgba(240,217,166,.35)}
+ .pr4-step{align-items:stretch;flex-direction:row;gap:14px}
+ .pr4-card{margin-top:0}
+ .pr4-photo{height:130px}
+}

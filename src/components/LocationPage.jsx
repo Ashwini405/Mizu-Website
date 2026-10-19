@@ -13,6 +13,7 @@ export function Logo({ id, name }) {
   if (id === 'amazon') return (
     <span className="lg lg-amz" aria-label="amazon"><b>amazon</b>
       <svg viewBox="0 0 120 20" aria-hidden="true"><path d="M8 4c24 14 70 14 102-2" fill="none" stroke="#F90" strokeWidth="4" strokeLinecap="round" /><path d="M104 0l10 2-4 9" fill="none" stroke="#F90" strokeWidth="3.5" strokeLinecap="round" strokeLinejoin="round" /></svg></span>)
+  if (id === 'mizu') return <span className="lg lg-t" aria-label="MIZU" style={{ fontFamily: 'var(--kana)', fontSize: 40 }}>水</span>
   if (id === 'google') return <span className="lg lg-g" aria-label="Google"><i style={{ color: '#4285F4' }}>G</i><i style={{ color: '#EA4335' }}>o</i><i style={{ color: '#FBBC05' }}>o</i><i style={{ color: '#4285F4' }}>g</i><i style={{ color: '#34A853' }}>l</i><i style={{ color: '#EA4335' }}>e</i></span>
   return <span className="lg lg-t" aria-label={name}>{name}</span>
 }
@@ -45,8 +46,8 @@ export function LeftPage({ loc, i, thumb = 0, onThumb }) {
   const first = useRef(true)
   useEffect(() => { first.current = false }, [])
   return (
-    <div className="lp lp-left">
-      <div className="lp-img"><img key={g[thumb]} className={first.current ? '' : 'fx'} src={g[thumb]} alt={`${loc.name}, ${loc.subtitle}`} draggable="false" /></div>
+    <div className={'lp lp-left lp-' + loc.id}>
+      <div className="lp-img"><img key={g[thumb]} className={first.current ? '' : 'fx'} src={g[thumb]} alt={`${loc.name}, ${loc.subtitle}`} draggable="false" />{loc.id === 'mizu' && <i className="lp-veil" aria-hidden="true" />}</div>
       <span className="lp-count">{pad(i)} / {pad(TOTAL)}</span>
       <button type="button" className="lp-gal" onClick={() => onThumb && onThumb((thumb + 1) % g.length)}>View Gallery</button>
       <h2 className="lp-title">{loc.title}</h2>
